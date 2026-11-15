@@ -20,5 +20,10 @@
     "interactive"
   ],
   "author": "Sviatoslav Bayer",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sviatoslav28/Solar-System-Simulator.git"
+  },
+  "homepage": "https://sviatoslav28.github.io/Solar-System-Simulator/"
 }

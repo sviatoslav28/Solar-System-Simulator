@@ -1,10 +1,13 @@
 # 🌌 3D Solar System Simulator
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen?style=for-the-badge&logo=github)](https://sviatoslav28.github.io/Solar-System-Simulator/)
 [![Three.js](https://img.shields.io/badge/Three.js-r166-black?style=for-the-badge&logo=three.js)](https://threejs.org/)
 [![WebGL](https://img.shields.io/badge/WebGL-2.0-990000?style=for-the-badge&logo=webgl)](https://www.khronos.org/webgl/)
 [![NASA Data](https://img.shields.io/badge/Data-NASA%20Planetary%20Fact%20Sheet-0B3D91?style=for-the-badge&logo=nasa)](https://nssdc.gsfc.nasa.gov/planetary/factsheet/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Pure Vanilla](https://img.shields.io/badge/Architecture-Zero--Build%20ESM-2ea44f?style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+
+**[▶ Launch Live Simulation](https://sviatoslav28.github.io/Solar-System-Simulator/)**
 
 An interactive, data-driven 3D Solar System simulator built with **Three.js**, **WebGL**, and native **JavaScript ES Modules**. Features physically grounded **Keplerian orbital mechanics**, procedural planetary textures, Fresnel atmospheric scattering, and a responsive glassmorphism control panel.
 
@@ -115,7 +118,7 @@ Because this project uses native **ES Modules** and standard **Browser Import Ma
 
 ```bash
 # Clone the repository
-git clone https://github.com/svatoslavbayer/solar-system.git
+git clone https://github.com/sviatoslav28/Solar-System-Simulator.git
 cd solar-system
 
 # Start lightweight server (no install required)
