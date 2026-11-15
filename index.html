@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="description" content="An interactive, data-driven 3D Solar System simulator with realistic planetary textures." />
+    <title>Solar System Simulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/png" href="./favic.png" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar glass">
+        <a class="brand" href="#" aria-label="Solar System Simulator home">
+          <span class="brand-mark"></span>
+          <span class="brand-title">Solar System Simulator</span>
+        </a>
+        <div class="topbar-actions">
+          <button class="button button-quiet" id="reset-button" type="button" title="Reset camera to solar overview (Esc)">Reset view</button>
+          <div class="playback-group">
+            <button class="button button-quiet" id="pause-button" type="button" aria-label="Pause simulation (Space)">Pause</button>
+            <button class="button button-primary" id="play-button" type="button" aria-label="Play simulation (Space)">Play</button>
+          </div>
+          <label class="speed-control" for="speed-select">
+            Speed
+            <select id="speed-select" aria-label="Simulation speed multiplier">
+              <option value="0.25">0.25×</option>
+              <option value="0.5">0.5×</option>
+              <option value="1" selected>1×</option>
+              <option value="2">2×</option>
+              <option value="5">5×</option>
+              <option value="10">10×</option>
+            </select>
+          </label>
+        </div>
+      </header>
+
+      <div class="page-author">Made by Sviatoslav Bayer</div>
+
+      <nav class="planet-nav-strip" id="planet-nav" aria-label="Quick select celestial body"></nav>
+
+      <main class="workspace">
+        <section class="viewport-card glass" aria-label="Interactive solar system viewport">
+          <div id="scene-container"></div>
+          <div class="viewport-hud">
+            <span class="live-dot" id="live-indicator"></span>
+            <span id="simulation-status">SIMULATION LIVE</span>
+          </div>
+          <div class="viewport-tip">Drag to orbit · Scroll to zoom · Click planet or label to track</div>
+        </section>
+
+        <aside class="side-panel glass">
+          <section class="panel-section planet-info">
+            <div class="eyebrow">Selected body</div>
+            <div class="planet-heading">
+              <span class="planet-swatch" id="planet-swatch"></span>
+              <h1 id="planet-name">Earth</h1>
+            </div>
+            <p class="planet-description" id="planet-description">Our home planet, a vibrant oasis of liquid oceans, breathable atmosphere, and life.</p>
+            <dl class="metrics" id="planet-metrics"></dl>
+          </section>
+
+          <section class="panel-section controls-section">
+            <div class="section-heading">
+              <h2>Simulation controls</h2>
+              <button class="text-button" id="focus-button" type="button" title="Center camera on current planet">Focus target</button>
+            </div>
+            <label class="range-field" for="time-speed">
+              <span>Time speed <output id="time-speed-output">1.0×</output></span>
+              <input id="time-speed" type="range" min="0" max="10" step="0.1" value="1" />
+            </label>
+            <label class="range-field" for="planet-scale">
+              <span>Planet scale <output id="planet-scale-output">1.0×</output></span>
+              <input id="planet-scale" type="range" min="0.5" max="2.5" step="0.05" value="1" />
+            </label>
+            <label class="range-field" for="orbit-scale">
+              <span>Orbit distance <output id="orbit-scale-output">1.0×</output></span>
+              <input id="orbit-scale" type="range" min="0.65" max="1.5" step="0.05" value="1" />
+            </label>
+            <div class="switch-list">
+              <label class="switch-row"><span>Orbit paths</span><input id="toggle-orbits" type="checkbox" checked /><i></i></label>
+              <label class="switch-row"><span>Planet labels</span><input id="toggle-labels" type="checkbox" checked /><i></i></label>
+              <label class="switch-row"><span>Motion trails</span><input id="toggle-trails" type="checkbox" /><i></i></label>
+              <label class="switch-row"><span>Auto-rotate view</span><input id="toggle-autorotate" type="checkbox" /><i></i></label>
+            </div>
+          </section>
+          <footer class="panel-footer">
+            <span>NASA Planetary Data</span>
+            <span id="fps-counter">— FPS</span>
+          </footer>
+        </aside>
+      </main>
+    </div>
+    <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.166.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.166.1/examples/jsm/"}}</script>
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
